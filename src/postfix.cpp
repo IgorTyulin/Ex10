@@ -60,6 +60,8 @@ string infix2postfix(std::string infix) {
         if (linow[i] == ' ' && linow[i + 1] == ' '){
             linow.erase(i, 1); i = (i - 1);
         }
+    int i = linow.length() - 1;
+    linow.erase(i, 1);
     return linow;
 }
 
