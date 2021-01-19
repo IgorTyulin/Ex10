@@ -1,7 +1,6 @@
 // Copyright 2021 Tyulin Igor
 #include "MyStack.h"
 #include "postfix.h"
-using namespace std;
 int stprior(char x) {
     switch (x) {
         case '(' :
@@ -20,8 +19,8 @@ int stprior(char x) {
             return 0;
     }
 }
-string infix2postfix(std::string infix) {
-    string linow;
+std::string infix2postfix(std::string infix) {
+    std::string linow;
     MyStack<char> stek(200);
     int score;
     for (int i = 0; i < infix.length(); i++) {
@@ -57,7 +56,7 @@ string infix2postfix(std::string infix) {
             stek.pop();
     }
     for (int i = 0; i < linow.length(); i++)
-        if (linow[i] == ' ' && linow[i + 1] == ' '){
+        if (linow[i] == ' ' && linow[i + 1] == ' ') {
             linow.erase(i, 1); i = (i - 1);
         }
     int i = linow.length() - 1;
