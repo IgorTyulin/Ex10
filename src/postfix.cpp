@@ -58,9 +58,7 @@ string infix2postfix(std::string infix) {
     }
     for (int i = 0; i < linow.length(); i++)
         if (linow[i] == ' ' && linow[i + 1] == ' '){
-        for(int j = i; j < linow.length()-1; j++)
-        linow[j] = linow[j+1];
-        linow[i] = 0;
+            linow.erase(i, 1); i = (i - 1);
         }
     return linow;
 }
